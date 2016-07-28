@@ -160,4 +160,14 @@ describe('barcodeToPostcode', function () {
         let postcodes = postnet.barcodeToPostcode(input);
         expect(postcodes).toEqual('45056-1234');
     });
+    it('should return a wrong input', function () {
+        input = ':|::| :|:|: ||::: :|:|: :||:: :::|| ::|:| ::||: :|::| ||:::';
+        const isCorrect = postnet.barcodeToPostcode(input);
+        expect(isCorrect).toEqual('a wrong input');
+    });
+    it('should return a wrong postcode', function () {
+        input = '| :|::| :|:|: ||::: :|:|: :||:: :::|| ::|:| ::||: :|::| |:|:: |';
+        const isCorrect = postnet.barcodeToPostcode(input);
+        expect(isCorrect).toEqual('a wrong postcode');
+    });
 });
