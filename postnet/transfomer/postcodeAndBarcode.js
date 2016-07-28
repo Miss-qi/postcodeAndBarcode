@@ -8,7 +8,7 @@ function loadAllBarcodes() {
 }
 
 function checkPostcodes(inputPostcodes) {
-    return (/^\d{5}$/.test(inputPostcodes)) || (/^\d{5}-\d{4}$/.test(inputPostcodes));
+    return /^\d{5}(-?\d{4})?$/.test(inputPostcodes);
 }
 
 function getPostcodes(inputPostcodes) {
@@ -21,7 +21,12 @@ function getCheckcode(postcodes) {
     let sum = postcodes.reduce(function (cur, newVal) {
         return cur + newVal;
     }, 0);
-    postcodes.push(10 - sum % 10);
+    if (sum % 10 === 0) {
+        postcodes.push(0);
+    }
+    else {
+        postcodes.push(10 - sum % 10);
+    }
     return postcodes;
 }
 
@@ -57,27 +62,25 @@ function checkBarcodes(input) {
     for (let i = 0; i < barcodeArray.length; i++) {
         return ((barcodeArray[i] === '|' || barcodeArray[i] === ':'
         || barcodeArray[i] === ' ') && barcodeArray[0] === bar
-        && barcodeArray[barcodeArray.length - 1] === bar);
+        && barcodeArray[barcodeArray.length - 1] === bar
+        && (barcodeArray.length === 8 || barcodeArray.length === 12));
     }
 }
 
 function getBarcodeWithoutFrame(input) {
     let barcodeList = [];
     let result = input.split(' ');
-    let temp;
-    for (let i = 1; i < result.length - 1; i++) {
-        barcodeList.push(result[i]);
-    }
+    result.filter((v, k, arr)=> {
+        if (k > 0 && k < arr.length - 1) {
+            barcodeList.push(v);
+        }
+    });
     return barcodeList;
 }
 
 function getDigits(barcodeList, allBarcodes) {
     return barcodeList.map(function (barcode) {
-        for (let i = 0; i < allBarcodes.length; i++) {
-            if (barcode === allBarcodes[i]) {
-                return i;
-            }
-        }
+        return allBarcodes.indexOf(barcode);
     });
 }
 

@@ -23,21 +23,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="postcodeAndBarcode_spec.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/spec/transfomer/postcodeAndBarcode_spec.js">
+      <file leaf-file-name="postcodeAndBarcode.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/transfomer/postcodeAndBarcode.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="491">
-              <caret line="170" column="54" selection-start-line="170" selection-start-column="54" selection-end-line="170" selection-end-column="54" />
+            <state relative-caret-position="1615">
+              <caret line="85" column="0" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="postcodeAndBarcode.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/transfomer/postcodeAndBarcode.js">
+      <file leaf-file-name="postcodeAndBarcode_spec.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/spec/transfomer/postcodeAndBarcode_spec.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="401">
-              <caret line="113" column="42" selection-start-line="113" selection-start-column="25" selection-end-line="113" selection-end-column="42" />
+            <state relative-caret-position="-1917">
+              <caret line="66" column="40" selection-start-line="66" selection-start-column="40" selection-end-line="66" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -58,6 +58,7 @@
         <option value="$PROJECT_DIR$/transfomer/postcode2barcode.js" />
         <option value="$PROJECT_DIR$/spec/transfomer/postcode2barcode_spec.js" />
         <option value="$PROJECT_DIR$/spec/transfomer/postcodeAndBarcode_spec.js" />
+        <option value="$PROJECT_DIR$/transfomer/postcodeAndBarcode.js" />
       </list>
     </option>
   </component>
@@ -235,12 +236,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1469674328044</updated>
-      <workItem from="1469674329393" duration="4458000" />
+      <workItem from="1469674329393" duration="9844000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4458000" />
+    <option name="totallyTimeSpent" value="9844000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="61" y="24" width="1305" height="744" extended-state="6" />
@@ -289,18 +290,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/transfomer/postcodeAndBarcode.js">
+    <entry file="file://$PROJECT_DIR$/spec/transfomer/postcodeAndBarcode_spec.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="401">
-          <caret line="113" column="42" selection-start-line="113" selection-start-column="25" selection-end-line="113" selection-end-column="42" />
+        <state relative-caret-position="-1917">
+          <caret line="66" column="40" selection-start-line="66" selection-start-column="40" selection-end-line="66" selection-end-column="40" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spec/transfomer/postcodeAndBarcode_spec.js">
+    <entry file="file://$PROJECT_DIR$/transfomer/postcodeAndBarcode.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="491">
-          <caret line="170" column="54" selection-start-line="170" selection-start-column="54" selection-end-line="170" selection-end-column="54" />
+        <state relative-caret-position="1615">
+          <caret line="85" column="0" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
           <folding />
         </state>
       </provider>

@@ -1,6 +1,8 @@
 'use strict';
 const postnet = require("../../transfomer/postcodeAndBarcode.js");
 
+//postcode to barcode
+
 describe('checkPostcodes', function () {
     it('it should return true', function () {
         let inputPostcodes = '95713';
@@ -9,6 +11,11 @@ describe('checkPostcodes', function () {
     });
     it('it should return true', function () {
         let inputPostcodes = '95713-1234';
+        let isCorrect = postnet.checkPostcodes(inputPostcodes);
+        expect(isCorrect).toBe(true);
+    });
+    it('it should return true', function () {
+        let inputPostcodes = '957131234';
         let isCorrect = postnet.checkPostcodes(inputPostcodes);
         expect(isCorrect).toBe(true);
     });
@@ -22,12 +29,22 @@ describe('checkPostcodes', function () {
         let isCorrect = postnet.checkPostcodes(inputPostcodes);
         expect(isCorrect).toBe(false);
     });
+    it('it should return false', function () {
+        let inputPostcodes = '95713112345';
+        let isCorrect = postnet.checkPostcodes(inputPostcodes);
+        expect(isCorrect).toBe(false);
+    });
 });
 
 describe('getPostcodes', function () {
     let inputPostcodes;
     it('should return postcode if length more than 5', function () {
         inputPostcodes = '98732-1234';
+        let postcodes = postnet.getPostcodes(inputPostcodes);
+        expect(postcodes).toEqual([9, 8, 7, 3, 2, 1, 2, 3, 4]);
+    });
+    it('should return postcode if length more than 5', function () {
+        inputPostcodes = '987321234';
         let postcodes = postnet.getPostcodes(inputPostcodes);
         expect(postcodes).toEqual([9, 8, 7, 3, 2, 1, 2, 3, 4]);
     });
@@ -44,6 +61,11 @@ describe('getCheckcode', function () {
         let postcodes = [9, 8, 7, 3, 2];
         let postcodeList = postnet.getCheckcode(postcodes);
         expect(postcodeList).toEqual([9, 8, 7, 3, 2, 1]);
+    });
+    it('should return getCheckcode', function () {
+        let postcodes = [9, 8, 7, 3, 3];
+        let postcodeList = postnet.getCheckcode(postcodes);
+        expect(postcodeList).toEqual([9, 8, 7, 3, 3, 0]);
     });
 });
 
@@ -151,7 +173,7 @@ describe('matchPostcodes', function () {
 describe('barcodeToPostcode', function () {
     let input;
     it('should return postcodes', function () {
-        input = '| :|::| :|:|: ||::: :|:|: :||:: |';
+        input = '| :|::| :|:|: ||::: :|:|: :||:: ||::: |';
         let postcodes = postnet.barcodeToPostcode(input);
         expect(postcodes).toEqual('45056');
     });
